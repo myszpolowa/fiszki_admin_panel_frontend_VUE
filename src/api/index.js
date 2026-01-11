@@ -29,8 +29,10 @@ export default {
     formData.append('username', username)
     formData.append('password', password)
 
-    const response = await axios.post(`${API_BASE}/admin/login`, formData, {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    const response = await api.post('/admin/login', formData.toString(), {
+      headers: { 
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
     })
     return response.data
   },
